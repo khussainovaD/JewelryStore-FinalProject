@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1 class="logo">Jewelry Store</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="orders.html">My Orders</a>
+                <span id="user-info"></span>
+                <button id="login-btn">Login</button>
+                <button id="logout-btn" style="display: none;">Logout</button>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <!-- Форма входа и регистрации -->
+        <section class="auth-container">
+            <div class="auth-form" id="auth-form">
+                <h2 id="auth-title">Login</h2>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button id="submit-auth">Login</button>
+                <p id="auth-toggle">Don't have an account? <a href="#" id="toggle-register">Register here</a></p>
+            </div>
+        </section>
+
+        <!-- Панель администратора -->
+        <section class="admin-panel" id="admin-panel" style="display: none;">
+            <h2>Admin Panel</h2>
+            
+            <!-- Форма добавления товара -->
+            <h3>Add New Product</h3>
+            <form id="add-product-form">
+                <input type="text" id="product-name" placeholder="Product Name" required>
+                <input type="number" id="product-price" placeholder="Price" required>
+                <textarea id="product-description" placeholder="Description"></textarea>
+                <input type="text" id="product-image" placeholder="Image URL">
+                
+                <select id="product-category" required>
+                    <option value="rings">Rings</option>
+                    <option value="bracelets">Bracelets</option>
+                    <option value="necklaces">Necklaces</option>
+                    <option value="earrings">Earrings</option>
+                    <option value="watches">Watches</option>
+                </select>
+                
+                <input type="text" id="product-tags" placeholder="Tags (comma separated)" required>
+                <button type="submit">Add Product</button>
+            </form>
+
+            <!-- Управление пользователями -->
+            <h3>All Users</h3>
+            <div id="user-list"></div>
+
+        </section>
+        
+        <!-- Раздел товаров -->
+        <section class="products">
+            <h2>Our Collection</h2>
+            <div id="product-list" class="product-grid"></div>
+        </section>
+
+        <!-- Обновление профиля -->
+        <section class="profile-section" id="profile-section" style="display: none;">
+            <h2>Profile</h2>
+            <p id="profile-email"></p>
+            <button id="update-profile-btn">Update Email</button>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
